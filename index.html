@@ -1,0 +1,111 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Object Picking Probability  | Worldwide Library of Virtual Manipulatives | VECC</title>
+	<meta name="description" content="Simulate picking objects from a container with/without replacement and determining the probability of possible outcomes.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+	<div class="vml-bg"></div>
+	<div class="container vml">
+		<header class="row vml-header">
+			<div class="col-md-1">
+				<div class="hexagon">
+					<i class="fa fa-spinner"></i>
+				</div>
+			</div>
+			<h1 class="col-md-10">Object Picking Probability</h1>
+			<div class="col-md-1"></div>
+		</header>
+		<div class="app-input">
+			<form class="row"><!-- input -->
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-6 color-pick">
+							<h2>Colors</h2>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_0" name="color_0" type="text" maxlength="3" value="3" data-color="red">
+								<div class="col-md-offset-1 col-md-1 swatch red"></div>
+								<label class="col-md-7" for="color_0">Red</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_1" name="color_1" type="text" maxlength="3" value="2" data-color="green">
+								<div class="col-md-offset-1 col-md-1 swatch green"></div>
+								<label class="col-md-7" for="color_1">Green</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_2" name="color_2" type="text" maxlength="3" value="1" data-color="blue">
+								<div class="col-md-offset-1 col-md-1 swatch blue"></div>
+								<label class="col-md-7" for="color_2">Blue</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_3" name="color_3" type="text" maxlength="3" value="0" data-color="yellow">
+								<div class="col-md-offset-1 col-md-1 swatch yellow"></div>
+								<label class="col-md-7" for="color_3">Yellow</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_4" name="color_4" type="text" maxlength="3" value="0" data-color="orange">
+								<div class="col-md-offset-1 col-md-1 swatch orange"></div>
+								<label class="col-md-7" for="color_4">Orange</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_5" name="color_5" type="text" maxlength="3" value="0" data-color="purple">
+								<div class="col-md-offset-1 col-md-1 swatch purple"></div>
+								<label class="col-md-7" for="color_5">Purple</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-2" id="color_6" name="color_6" type="text" maxlength="3" value="0" data-color="silver">
+								<div class="col-md-offset-1 col-md-1 swatch silver"></div>
+								<label class="col-md-7" for="color_6">Silver</label>
+							</fieldset>
+						</div>
+						<div class="col-md-6 options">
+							<h2>Options</h2>
+							<fieldset class="row">
+								<input class="col-md-offset-1 col-md-3" id="draws" name="draws" type="text" maxlength="3" value="3">
+								<label class="col-md-8" for="draws">Draws (per trial)</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-offset-1 col-md-3" id="trials" name="trials" type="text" maxlength="3" value="1">
+								<label class="col-md-8" for="trials">Trials</label>
+							</fieldset>
+							<fieldset class="row">
+								<input class="col-md-offset-1 col-md-1" id="replace" name="replace" type="checkbox">
+								<label class="col-md-10">Replacement (put the picked object back in after each draw)</label>
+							</fieldset>
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button class="btn btn-success" id="submit" name="submit" type="button">GO!</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 bag">
+					<div id="bag_canvas"></div>
+				</div>
+			</form>
+			<div class="app-input-bg"></div>
+		</div>
+		<div style="position:relative; margin-top:12px; padding:8px"><!-- results -->
+			<div class="results">Press "GO!" to calculate trials...</div>
+                        <div class="app-results-bg"></div>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>

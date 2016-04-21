@@ -1,0 +1,246 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+body {
+	font-family:'Open Sans',sans-serif;
+	font-weight:normal;
+	color:#fff;
+	background:rgb(45,0,60);
+}
+
+.vml-bg {
+	position:fixed;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background:rgb(45,0,60);
+	background:-moz-linear-gradient(-45deg,rgba(45,0,60,1) 0%,rgba(5,0,25,1) 100%);
+	background:-webkit-gradient(linear,left top,right bottom,color-stop(0%,rgba(45,0,60,1)),color-stop(100%,rgba(5,0,25,1)));
+	background:-webkit-linear-gradient(-45deg,rgba(45,0,60,1) 0%,rgba(5,0,25,1) 100%);
+	background:-o-linear-gradient(-45deg,rgba(45,0,60,1) 0%,rgba(5,0,25,1) 100%);
+	background:-ms-linear-gradient(-45deg,rgba(45,0,60,1) 0%,rgba(5,0,25,1) 100%);
+	background:linear-gradient(135deg,rgba(45,0,60,1) 0%,rgba(5,0,25,1) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d003c',endColorstr='#050019',GradientType=1);
+	z-index:-1000;
+}
+
+.vml-header {
+	margin-bottom:20px;
+}
+
+.vml-header .badge {
+	display:inline-block;
+	overflow:hidden;
+	height:100px;
+	transform:rotate(30deg) skewX(30deg);
+	border-radius:28px;
+}
+
+.vml-header .badge *,
+.vml-header .badge *:before {
+	display:block;
+	overflow:hidden;
+	width:inherit;
+	height:inherit;
+	border-radius:inherit;
+}
+
+.vml-header .badge span {
+	transform:skewX(-30deg) rotate(60deg) skewX(30deg);
+}
+
+.vml-header .badge:first-child span:before {
+	transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+	background: orange;
+	content: '';
+}
+
+.vml-header h1 {
+	font-weight: 200;
+	padding-left:0;
+}
+
+@media screen and (max-width: 767px) {
+.vml-header h1 {
+	font-size:18px;
+}
+}
+
+.hexagon {
+	margin-top:25px;
+	width:56px;
+	height:32px;
+	background: #e3e36a;
+	position: relative;
+	border-radius:5px;
+}
+
+.hexagon i {
+	padding-left:15px;
+	padding-top:4px;
+	color:#ffffff;
+	font-size:26px;
+}
+
+.hexagon:before {
+	content: "";
+	position: absolute;
+	top: -14px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 28px solid transparent;
+	border-right: 28px solid transparent;
+	border-bottom: 16px solid #e3e36a;
+	border-radius:10px;
+}
+.hexagon:after {
+	content: "";
+	position: absolute;
+	bottom: -14px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 28px solid transparent;
+	border-right: 28px solid transparent;
+	border-top: 16px solid #e3e36a;
+	border-radius:10px;
+}
+
+.vml form {
+/*	background-color:#7a70ff;*/
+}
+
+.vml .color-pick input {
+	position:relative;
+}
+
+.vml .swatch {
+	padding:0;
+	width: 22px;
+	height: 22px;
+	border:1px solid #fafafa;
+	background-color: #fff;
+	border-radius:3px;
+}
+
+.vml .swatch.small {
+	padding:0;
+	margin:0;
+	position: absolute;
+	border-radius:0;
+	border:none;
+	opacity:0.75;
+	width:10px;
+	height:10px;
+}
+
+.vml .swatch.mini {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	opacity:1.0;
+	border-radius:0;
+	border:1px solid #fff;
+	margin:0 2px 0 2px;
+}
+
+.vml .swatch.red    { background-color:#e62739; }
+.vml .swatch.green  { background-color:#259b24; }
+.vml .swatch.blue   { background-color:#5677fc; }
+.vml .swatch.yellow { background-color:#ffeb3b; }
+.vml .swatch.orange { background-color:#ff9800; }
+.vml .swatch.purple { background-color:#9c27b0; }
+.vml .swatch.silver { background-color:#9e9e9e; }
+
+.vml .app-input {
+	position: relative;
+	padding:8px;
+}
+
+.vml .app-input .app-input-bg {
+	position: absolute;
+	background-color:#7a70ff;
+	border-radius:6px;
+	opacity:0.5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index:-1;
+}
+
+.vml .app-results-bg {
+	position: absolute;
+	background-color:#7a70ff;
+	border-radius:6px;
+	opacity:0.5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index:-1;
+}
+
+.vml .color-pick fieldset {
+	padding-left: 15px;
+}
+
+.vml input {
+	color:#222;
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+	background-color:#fafafa;
+	border:0;
+	height: 22px;
+	border-radius:3px;
+}
+
+.vml .input {
+	padding-left:0;
+	padding-right:0;
+	margin-left:0;
+}
+
+.vml input[type='checkbox'] {
+	margin-left:8.33%
+}
+
+.vml label {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 200;
+	padding-top: 1px;
+}
+
+#bag_canvas {
+	border: 1px solid #fafafa;
+	border-radius:3px;
+	background-color:#eaeaea;
+	width:545px;
+	height:240px;
+	position:relative;
+}
+
+.vml .app-input h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 200;
+	margin-top: 4px;
+	font-size:24px;
+}
+
+.vml .outcomes .heading {
+	font-size:9px;
+}
+
+.vml .outcomes .probability {
+	font-weight:200;
+	opacity:0.90;
+	text-align:right;
+}
+
+.vml .btn-success {
+	width: 100px;
+	font-size:18px;
+	line-height:24px;
+	margin-top:20px;
+}
